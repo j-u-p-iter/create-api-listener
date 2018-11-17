@@ -1,5 +1,5 @@
 {
-  "name": "api-listener",
+  "name": "@j.u.p.iter/api-listener",
   "version": "1.0.0",
   "description": "Listen api until it gives you, what you want",
   "main": "dist/lib/api-listener.js",
