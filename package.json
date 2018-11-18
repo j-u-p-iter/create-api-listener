@@ -1,7 +1,8 @@
 {
   "name": "@j.u.p.iter/api-listener",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Listen api until it gives you, what you want",
+  "keys": ["api", "listener", "api listener", "wait", "wait for response"],
   "main": "dist/lib/api-listener.js",
   "module": "dist/lib/api-listener.esm.js",
   "umd:main": "dist/lib/api-listener.umd.js",
@@ -9,6 +10,9 @@
   "typings": "dist/types",
   "repository": "git@github.com:j-u-p-iter/api-listener.git",
   "author": "Leontyev Kirill (j.u.p.iter) <pn79122821224@gmail.com> (http://j-u-p-iter.pro/)",
+  "files": [
+    "dist"
+  ],
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^23.3.9",
