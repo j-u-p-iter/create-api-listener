@@ -1,8 +1,14 @@
 {
   "name": "@j.u.p.iter/api-listener",
-  "version": "1.1.0",
+  "version": "0.0.0-development",
   "description": "Listen api until it gives you, what you want",
-  "keys": ["api", "listener", "api listener", "wait", "wait for response"],
+  "keywords": [
+    "api",
+    "listener",
+    "api listener",
+    "wait",
+    "wait for response"
+  ],
   "main": "dist/lib/api-listener.js",
   "module": "dist/lib/api-listener.esm.js",
   "umd:main": "dist/lib/api-listener.umd.js",
@@ -16,17 +22,21 @@
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^23.3.9",
+    "cz-conventional-changelog": "^2.1.0",
     "jest": "^23.6.0",
     "prettier": "^1.15.2",
     "rimraf": "^2.6.2",
     "rollup": "^0.67.2",
     "rollup-plugin-typescript2": "^0.18.0",
+    "semantic-release": "^15.12.0",
+    "travis-deploy-once": "^5.0.9",
     "ts-jest": "^23.10.4",
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.16.0",
     "typescript": "^3.1.6"
   },
   "scripts": {
+    "commit": "git-cz",
     "prebuild": "rimraf dist",
     "build:modules": "rollup -c rollup.config.ts",
     "build": "yarn run build:modules",
@@ -35,6 +45,14 @@
     "lint": "tslint -p tsconfig.json -t codeFrame 'src/**/*.ts'",
     "test": "jest --config jest.config.js",
     "test:watch": "yarn run test --watch",
-    "test:prod": "yarn run lint && yarn run test --coverage --no-cache"
+    "test:prod": "yarn run lint && yarn run test --coverage --no-cache",
+    "semantic-release": "semantic-release",
+    "travis-deploy-once": "travis-deploy-once"
+  },
+  "czConfig": {
+    "path": "node_modules/cz-conventional-changelog"
+  },
+  "dependencies": {
+    "commitizen": "^3.0.4"
   }
 }
