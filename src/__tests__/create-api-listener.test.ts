@@ -14,7 +14,7 @@ describe('createApiListener', () => {
 
   describe('when we get necessary response', () => {
     it('should be resolved with response', async () => {
-      const callback = (response: any) => response.data === 5;
+      const callback = ({ data }: any) => data === 5;
 
       const apiListener = createApiListener(apiCall, callback);
 
@@ -27,7 +27,7 @@ describe('createApiListener', () => {
 
   describe('when we don`t get necessary response', () => {
     it('should be resolved with last response after time runs out', async () => {
-      const callback = (response: any) => response.data === 4;
+      const callback = ({ data }: any) => response.data === 4;
 
       const apiListener = createApiListener(apiCall, callback, 0, 3000);
 
