@@ -11,7 +11,7 @@ node_js:
 script:
   npm run test:prod && npm run build
 after_success:
-  - npm run travis-deploy-once "npm run semantic-release"
+  - npm run semantic-release
 branches:
-  except:
-    - /^v\d+\.\d+\.\d+$/
+  only:
+    - master
