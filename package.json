@@ -46,7 +46,7 @@
     "test": "jest --config jest.config.js",
     "test:watch": "yarn run test --watch",
     "test:prod": "yarn run lint && yarn run test --coverage --no-cache",
-    "semantic-release": "semantic-release",
+    "semantic-release": "semantic-release pre && npm publish && semantic-releaese post",
     "travis-deploy-once": "travis-deploy-once"
   },
   "czConfig": {
