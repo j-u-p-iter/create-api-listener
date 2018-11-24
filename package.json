@@ -25,6 +25,7 @@
     "coveralls": "^3.0.2",
     "cz-conventional-changelog": "^2.1.0",
     "jest": "^23.6.0",
+    "lint-staged": "^8.1.0",
     "prettier": "^1.15.2",
     "rimraf": "^2.6.2",
     "rollup": "^0.67.2",
@@ -34,6 +35,7 @@
     "ts-jest": "^23.10.4",
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.16.0",
+    "tslint-plugin-prettier": "^2.0.1",
     "typescript": "^3.1.6"
   },
   "scripts": {
@@ -44,12 +46,20 @@
     "start": "yarn run build:modules -w",
     "format": "prettier --write 'src/**/*.ts'",
     "lint": "tslint -p tsconfig.json -t codeFrame 'src/**/*.ts'",
+    "lint:fix": "yarn run lint --fix",
     "test": "jest --config jest.config.js",
     "test:watch": "yarn run test --watch",
     "test:prod": "yarn run lint && yarn run test --coverage --no-cache",
     "test-coverage-report": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "semantic-release": "semantic-release --prepare && npm publish && semantic-releaese --success",
-    "travis-deploy-once": "travis-deploy-once"
+    "travis-deploy-once": "travis-deploy-once",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "src/*": [
+      "yarn run lint:fix",
+      "git add"
+    ]
   },
   "czConfig": {
     "path": "node_modules/cz-conventional-changelog"
