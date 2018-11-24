@@ -22,6 +22,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^23.3.9",
+    "coveralls": "^3.0.2",
     "cz-conventional-changelog": "^2.1.0",
     "jest": "^23.6.0",
     "prettier": "^1.15.2",
@@ -46,6 +47,7 @@
     "test": "jest --config jest.config.js",
     "test:watch": "yarn run test --watch",
     "test:prod": "yarn run lint && yarn run test --coverage --no-cache",
+    "test-coverage-report": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls",
     "semantic-release": "semantic-release --prepare && npm publish && semantic-releaese --success",
     "travis-deploy-once": "travis-deploy-once"
   },
