@@ -47,7 +47,7 @@
     "test": "jest --config jest.config.js",
     "test:watch": "yarn run test --watch",
     "test:prod": "yarn run lint && yarn run test --coverage --no-cache",
-    "test-coverage-report": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls",
+    "test-coverage-report": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "semantic-release": "semantic-release --prepare && npm publish && semantic-releaese --success",
     "travis-deploy-once": "travis-deploy-once"
   },
