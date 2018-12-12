@@ -9,9 +9,9 @@
     "wait",
     "wait for response"
   ],
-  "main": "dist/lib/api-listener.js",
+  "main": "dist/lib/api-listener.cjs.js",
   "module": "dist/lib/api-listener.esm.js",
-  "umd:main": "dist/lib/api-listener.umd.js",
+  "umd:main": "dist/lib/api-listener.umd.min.js",
   "source": "dist/lib/api-listener.js",
   "typings": "dist/types",
   "repository": "git@github.com:j-u-p-iter/api-listener.git",
@@ -21,50 +21,36 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "@types/jest": "^23.3.9",
     "coveralls": "^3.0.2",
     "cz-conventional-changelog": "^2.1.0",
-    "jest": "^23.6.0",
-    "lint-staged": "^8.1.0",
-    "prettier": "^1.15.2",
+    "husky": "^1.2.0",
     "rimraf": "^2.6.2",
-    "rollup": "^0.67.2",
-    "rollup-plugin-typescript2": "^0.18.0",
     "semantic-release": "^15.12.0",
-    "travis-deploy-once": "^5.0.9",
-    "ts-jest": "^23.10.4",
-    "tslint": "^5.11.0",
-    "tslint-config-prettier": "^1.16.0",
-    "tslint-plugin-prettier": "^2.0.1",
-    "typescript": "^3.1.6"
+    "travis-deploy-once": "^5.0.9"
   },
   "scripts": {
     "commit": "git-cz",
-    "prebuild": "rimraf dist",
-    "build:modules": "rollup -c rollup.config.ts",
+    "build:modules": "jupiter-scripts build --bundle",
     "build": "yarn run build:modules",
-    "start": "yarn run build:modules -w",
-    "format": "prettier --write 'src/**/*.ts'",
-    "lint": "tslint -p tsconfig.json -t codeFrame 'src/**/*.ts'",
+    "start": "yarn run build:modules --watch",
+    "lint": "jupiter-scripts lint --format codeFrame",
     "lint:fix": "yarn run lint --fix",
-    "test": "jest --config jest.config.js",
-    "test:watch": "yarn run test --watch",
+    "test": "jupiter-scripts test",
     "test:prod": "yarn run lint && yarn run test --coverage --no-cache",
     "test-coverage-report": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "semantic-release": "semantic-release --prepare && npm publish && semantic-releaese --success",
-    "travis-deploy-once": "travis-deploy-once",
-    "precommit": "lint-staged"
+    "travis-deploy-once": "travis-deploy-once"
   },
-  "lint-staged": {
-    "src/*": [
-      "yarn run lint:fix",
-      "git add"
-    ]
+  "husky": {
+    "hooks": {
+      "pre-commit": "jupiter-scripts pre-commit"
+    }
   },
   "czConfig": {
     "path": "node_modules/cz-conventional-changelog"
   },
   "dependencies": {
-    "commitizen": "^3.0.4"
+    "commitizen": "^3.0.4",
+    "typescript": "^3.2.1"
   }
 }
