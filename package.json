@@ -33,14 +33,6 @@
     "semantic-release": "semantic-release --prepare && npm publish && semantic-releaese --success",
     "travis-deploy-once": "travis-deploy-once"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "jupiter-scripts pre-commit"
-    }
-  },
-  "czConfig": {
-    "path": "node_modules/cz-conventional-changelog"
-  },
   "dependencies": {
     "commitizen": "^3.0.4",
     "typescript": "^3.2.1"
