@@ -1,7 +1,7 @@
 export const createApiListener = (
   apiCall: (...args: any[]) => Promise<any>,
   callback: (data: any) => boolean,
-  delay: number = 2000,
+  delays: number = 2000,
   timeout: number = 50000,
 ) => {
   let startTime: number | null = null
@@ -14,7 +14,7 @@ export const createApiListener = (
 
   const apiListener = async (): Promise<any> => {
     if (startTime) {
-      await wait(delay)
+      await wait(delays)
     }
 
     startTime = startTime || +new Date()
