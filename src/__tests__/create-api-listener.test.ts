@@ -1,41 +1,41 @@
-import { createApiListener } from '../'
+import { createApiListener } from "../";
 
-describe('createApiListener', () => {
-  let response: { [key: string]: number }
-  let apiCall: () => Promise<any>
+describe("createApiListener", () => {
+  let response: { [key: string]: number };
+  let apiCall: () => Promise<any>;
 
   beforeAll(() => {
-    response = { data: 5 }
+    response = { data: 5 };
 
     apiCall = () =>
       new Promise(resolve => {
-        setTimeout(() => resolve(response), 2000)
-      })
-  })
+        setTimeout(() => resolve(response), 2000);
+      });
+  });
 
-  describe('when we get necessary response', () => {
-    it('should be resolved with response', async () => {
-      const callback = ({ data }: any) => data === 5
+  describe("when we get necessary response", () => {
+    it("should be resolved with response", async () => {
+      const callback = ({ data }: any) => data === 5;
 
-      const apiListener = createApiListener(apiCall, callback)
+      const apiListener = createApiListener(apiCall, callback);
 
-      const result = await apiListener()
-      const expected = response
+      const result = await apiListener();
+      const expected = response;
 
-      expect(result).toBe(expected)
-    })
-  })
+      expect(result).toBe(expected);
+    });
+  });
 
-  describe('when we don`t get necessary response', () => {
-    it('should be resolved with last response after time runs out', async () => {
-      const callback = ({ data }: any) => response.data === 4
+  describe("when we don`t get necessary response", () => {
+    it("should be resolved with last response after time runs out", async () => {
+      const callback = ({ data }: any) => response.data === 4;
 
-      const apiListener = createApiListener(apiCall, callback, 0, 3000)
+      const apiListener = createApiListener(apiCall, callback, 0, 3000);
 
-      const result = await apiListener()
-      const expected = response
+      const result = await apiListener();
+      const expected = response;
 
-      expect(result).toBe(expected)
-    })
-  })
-})
+      expect(result).toBe(expected);
+    });
+  });
+});

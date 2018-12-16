@@ -28,19 +28,12 @@
     "lint": "jupiter-scripts lint --format codeFrame",
     "lint:fix": "yarn run lint --fix",
     "test": "jupiter-scripts test",
-    "test:prod": "yarn run lint && yarn run test --coverage --no-cache",
-    "test-coverage-report": "jest --coverage && cat ./coverage/lcov.info | coveralls",
-    "semantic-release": "semantic-release --prepare && npm publish && semantic-releaese --success",
-    "travis-deploy-once": "travis-deploy-once"
+    "semantic-release": "semantic-release --prepare && npm publish && semantic-releaese --success"
   },
   "dependencies": {
-    "commitizen": "^3.0.4",
     "typescript": "^3.2.1"
   },
   "devDependencies": {
-    "@j.u.p.iter/jupiter-scripts": "^1.0.5",
-    "coveralls": "^3.0.2",
-    "semantic-release": "^15.12.0",
-    "travis-deploy-once": "^5.0.9"
+    "@j.u.p.iter/jupiter-scripts": "^1.0.5"
   }
 }
