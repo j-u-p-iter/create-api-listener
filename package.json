@@ -33,6 +33,6 @@
     "typescript": "3.2.1"
   },
   "devDependencies": {
-    "@j.u.p.iter/jupiter-scripts": "1.0.0"
+    "@j.u.p.iter/jupiter-scripts": "1.1.2"
   }
 }

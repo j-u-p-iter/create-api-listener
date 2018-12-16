@@ -706,10 +706,10 @@
     log-update "^2.3.0"
     strip-ansi "^3.0.1"
 
-"@j.u.p.iter/jupiter-scripts@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@j.u.p.iter/jupiter-scripts/-/jupiter-scripts-1.0.0.tgz#7167efc3a5177d89bb6153f94852f01972715df3"
-  integrity sha512-5EEmc4jVJoc8eHJIUKQugPiE7FCtGwNVK4ykQeIHsZ9J5lz/ZS3Wz9lb50SMjngLEXwk3RK4T44fnKoHY7l3HQ==
+"@j.u.p.iter/jupiter-scripts@1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@j.u.p.iter/jupiter-scripts/-/jupiter-scripts-1.1.2.tgz#2bd4fcebdb51ff63a64c1c6cb949f53b2470c913"
+  integrity sha512-ToTPRnW6EhXgZt0s0pqX42Th+42Z+olZJfEx5rI36LpjHfb9MZo06sTI3v6guw6RXPDfnXjZcbrXNfXT8uTV1A==
   dependencies:
     "@babel/cli" "^7.0.0"
     "@babel/core" "^7.0.0"
