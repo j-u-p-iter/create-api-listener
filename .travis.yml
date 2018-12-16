@@ -11,7 +11,8 @@ jobs:
     - stage: validate
       script: jupiter-scripts validate
     - stage: deploy
-      script: jupiter-scripts deploy
+      script: yarn run bundle
+      after_success: jupiter-scripts deploy
 stages:
   validate
   deploy
