@@ -9,12 +9,12 @@
     "wait",
     "wait for response"
   ],
-  "main": "dist/lib/api-listener.cjs.js",
-  "module": "dist/lib/api-listener.esm.js",
-  "umd:main": "dist/lib/api-listener.umd.min.js",
-  "source": "dist/lib/api-listener.js",
+  "main": "dist/lib/create-api-listener.cjs.js",
+  "module": "dist/lib/create-api-listener.esm.js",
+  "umd:main": "dist/lib/create-api-listener.umd.min.js",
+  "source": "dist/lib/create-api-listener.js",
   "typings": "dist/types",
-  "repository": "git@github.com:j-u-p-iter/api-listener.git",
+  "repository": "git@github.com:j-u-p-iter/create-api-listener.git",
   "author": "Leontyev Kirill (j.u.p.iter) <pn79122821224@gmail.com> (http://j-u-p-iter.pro/)",
   "files": [
     "dist"
