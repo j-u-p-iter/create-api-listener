@@ -27,13 +27,12 @@
     "start": "yarn run build:modules --watch",
     "lint": "jupiter-scripts lint --format codeFrame",
     "lint:fix": "yarn run lint --fix",
-    "test": "jupiter-scripts test",
-    "semantic-release": "semantic-release --prepare && npm publish && semantic-releaese --success"
+    "test": "jupiter-scripts test"
   },
   "dependencies": {
-    "typescript": "^3.2.1"
+    "typescript": "3.2.1"
   },
   "devDependencies": {
-    "@j.u.p.iter/jupiter-scripts": "^1.0.5"
+    "@j.u.p.iter/jupiter-scripts": "1.0.0"
   }
 }
