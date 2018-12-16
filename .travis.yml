@@ -9,9 +9,9 @@ node_js:
 jobs:
   include:
     - stage: validate
-      script: node src validate
+      script: jupiter-scripts validate
     - stage: deploy
-      script: node src deploy
+      script: jupiter-scripts deploy
 stages:
   validate
   deploy
