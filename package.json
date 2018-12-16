@@ -1,5 +1,5 @@
 {
-  "name": "@j.u.p.iter/api-listener",
+  "name": "@j.u.p.iter/create-api-listener",
   "version": "0.0.0-semantically-released",
   "description": "Listen api until it gives you, what you want",
   "keywords": [
